@@ -1,0 +1,1383 @@
+<div class="row"  *ngIf='!showRevieewComponent'>
+  <!-- stepper strated -->
+  <mat-toolbar style="background-color: white;">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <div class="row">
+              <div class="col-sm" style="padding: 0px;">
+                <div class="row">
+                  <div class="col-sm-3" style="padding: 0px;">
+                    <div class="circle" (click)="scroll('General-1')">
+
+                      <p class="circleNumber">1</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="font-size: 15px;margin-top: 3px;">General</p>
+                  </div>
+                  <div class="col-sm-5 padding">
+                    <div class="steperline"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm" style="padding: 0px;">
+                <div class="row">
+                  <div class="col-sm-3" style="padding: 0px;">
+                    <div class="circle" (click)="scroll('tracer-2')">
+                      <p class="circleNumber">2</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="font-size: 15px;margin-top: 3px;">Tracer</p>
+                  </div>
+                  <div class="col-sm-5 padding">
+                    <div class="steperline"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm" style="padding: 0px;">
+                <div class="row">
+                  <div class="col-sm-3" style="padding: 0px;">
+                    <div class="circle" (click)="scroll('frame-3')">
+                      <p class="circleNumber">3</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="font-size: 15px;margin-top: 3px;">Frame</p>
+                  </div>
+                  <div class="col-sm-5 padding">
+                    <div class="steperline"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm" style="padding: 0px;">
+                <div class="row">
+                  <div class="col-sm-3" style="padding: 0px;">
+                    <div class="circle" (click)="scroll('rx-4')">
+                      <p class="circleNumber">4</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="font-size: 15px;margin-top: 3px;">RX</p>
+                  </div>
+                  <div class="col-sm-5" style="padding: 0px;">
+                    <div class="steperline" style="width: 113%;margin-left: -7px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm" style="padding: 0px;">
+                <div class="row">
+                  <div class="col-sm-3" style="padding: 0px;">
+                    <div class="circle" (click)="scroll('lense-5')">
+                      <p class="circleNumber">5</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="font-size: 15px;margin-top: 3px;">Lence</p>
+                  </div>
+                  <div class="col-sm-5 padding">
+                    <div class="steperline"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm" style="padding: 0px;">
+                <div class="row">
+                  <div class="col-sm-3" style="padding: 0px;">
+                    <div class="circle" (click)="scroll('review-6')">
+                      <p class="circleNumber">6</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="font-size: 15px;margin-top: 3px;">Review</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-outline-primary button">Submit Order</button>
+
+            <i class="material-icons" style="float: right;margin-top: 5px;">more_vert</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+  <!-- stepper end -->
+  <div class="row" id="General-1"></div>
+  <!-- 1. General card -->
+  <div class="row firstTopRow">
+    <div class="container" style="margin-top: 20px;">
+      <div #General>
+        <mat-card class="example-card"  id="general">
+          <div class="row">
+            <div class="col-sm" style="padding: 0px;">
+              <mat-card-title> <span style="margin-right: 5px;"> 1. </span> <span>GENERAL</span> </mat-card-title>
+            </div>
+            <div class="col-sm">
+              <i class="material-icons errorIconn">error_outline</i>
+            </div>
+          </div>
+          <div class="line"></div>
+          <mat-card-content>
+            <div class="row mt-30">
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="row" style="margin-top:20px;margin-bottom:20px">
+                    <div class="col-sm">
+                      <mat-label>Order Type</mat-label>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <button mat-button class="orderTypeWhichEye">Uncut</button>
+                  </div>
+                  <div class="col-sm">
+                    <button mat-button class="orderTypeWhichEye">Finished</button>
+                  </div>
+                  <div class="col-sm">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="row" style="margin-top:20px;margin-bottom:10px">
+                    <div class="col-sm">
+                      <mat-label>Which Eye</mat-label>
+                    </div>
+                  </div>
+                  <div class="col-sm" style="padding-left: 0px;">
+                    <button mat-button class="orderTypeWhichEye">Both</button>
+                  </div>
+                  <div class="col-sm">
+                    <button mat-button class="orderTypeWhichEye">Only Left</button>
+                  </div>
+                  <div class="col-sm">
+                    <button mat-button class="orderTypeWhichEye">Only Right</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- General Form -->
+            <div class="row">
+              <div class="col-sm">
+                <form action="">
+                  <div class="row mt-30">
+                    <div class="col-sm-5">
+                     <h6></h6> <span class="label">Lab:</span>
+                      <!-- <mat-label>Lab:</mat-label> -->
+                      <div class="inner-addon left-addon">
+                        <i  class="material-icons glyphicon">search</i>
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input  style="padding-left: 40px;" placeholder="Color" type="text" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-sm-1 margin">
+                      <i class="material-icons">add_circle_outline</i>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <mat-label>Store Location</mat-label>
+                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedValue">
+                        <option *ngFor="let food of Animal" [value]="food.name">{{food.name}}</option>
+
+                      </select>
+                    </div>
+                    <div class="col-sm-1"></div>
+                  </div>
+                  <div class="row mt-30">
+                    <div class="col-sm-5">
+                      <mat-label>Patient:</mat-label>
+                      <div class="inner-addon left-addon">
+                       <i  class="material-icons glyphicon">search</i>
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input  style="padding-left: 40px;" type="text" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-sm-1 margin">
+                      <i class="material-icons">add_circle_outline</i>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <div class="row">
+                        <div class="col-sm-6" style="padding: 0px;">
+                          <mat-label>Bill to Account#:</mat-label>
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <mat-label>Ship to Account#:</mat-label>
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                  </div>
+                  <div class="row" style="margin-top: 10px;">
+                    <div class="col-sm-5 mt-30" style="padding: 0px;">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <mat-label>PO:</mat-label>
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <mat-label>Tray#:</mat-label>
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5  mt-30 mb" >
+                      <div class="row">
+                        <div class="col-sm-6" style="padding: 0px;">
+                          <mat-label>Packege ID:</mat-label>
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="checkbox" style="margin-top: 23px;">
+                            <mat-checkbox class="example-margin">Rush</mat-checkbox>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-1" id="tracer-2"></div>
+                  </div>
+                </form>
+                <!-- General Form end -->
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- FRAME AND SHAPE card -->
+
+      <div>
+        <mat-card>
+          <div class="row">
+            <div class="col-sm" style="padding: 0px;">
+              <mat-card-title> <span style="margin-right: 5px;">2. </span> <span>FRAME AND SHAPE</span>
+              </mat-card-title>
+            </div>
+            <div class="col-sm">
+              <i class="material-icons errorIconn">error_outline</i>
+            </div>
+          </div>
+          <div class="line"></div>
+          <mat-card-content>
+            <form action="">
+              <div class="row">
+                <div class="col mt-10">
+                  <div class="row mt-30">
+                    <div class="col-sm-8">
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1" style="margin-right: 5px;">Frame To Come</mat-radio-button>
+                        <mat-radio-button value="2" style="margin-left: 34px;">Lab Suplied Frame</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                    <div class="col-sm-4"></div>
+                  </div>
+                  <div class="row mt-30">
+                    <div class="col">
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1" style="margin-right: 5px;">Supply Edged Lenses Only
+                        </mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                    <div class="col">
+                    </div>
+                  </div>
+                  <div class="row mt-30">
+                    <div class="col">
+                      <mat-label>Frame Type:</mat-label>
+                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedValue">
+                        <option *ngFor="let frame of frameType" [value]="frame.frameName">{{frame.frameName}}</option>
+
+                      </select>
+
+                    </div>
+                  </div>
+                  <div class="row mt-30">
+                    <div class="col">
+                      <mat-label>Edge Type:</mat-label>
+                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrand">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+
+                    </div>
+                  </div>
+                  <div class="row mt-30">
+                    <div class="col">
+                      <mat-label>Frame Brand:</mat-label>
+                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row mt-30">
+                    <div class="col">
+                      <mat-label>Model:</mat-label>
+                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row mt-30">
+                    <div class="col">
+                      <mat-label>Color:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" class="form-control searchBar" />
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row" style="margin-top: 86px;">
+                    <div class="col">
+                      <button mat-stroked-button color="primary" class="mapTracingButtonn">Map Tracinng File</button>
+                    </div>
+                  </div>
+                  <div class="row mt-10">
+                    <div class="col" style="margin-top:5px">
+                      <img src="../../../assets/1.png" alt="" style="width: 100%;">
+                    </div>
+                  </div>
+                  <div class="row mt-20" style="margin-top: 5px;">
+                    <div class="col">
+                      <div class="row">
+                        <div class="col-3" style="padding: 0px;">
+                          <i class="material-icons" style="color: #007bff;">
+                            delete
+                          </i>
+                        </div>
+                        <div class="col-6" style="padding: 0px;">
+                          <a href="">
+                            Remove</a>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col-3" style="padding: 0px;">
+                          <i class="material-icons" style="color: #007bff;">
+                            repeat
+                          </i>
+                        </div>
+                        <div class="col-6" style="padding: 0px;">
+                          <a href="">Retrace</a>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true" focusable="false" width="1em" height="1em"
+                        style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+                        preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                        <path
+                          d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18c-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18c.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9z"
+                          fill="#626262" /></svg>
+                      <a href="">
+                        Edit Shape
+                      </a>
+                    </div>
+                    <div class="col">
+                      <div class="row">
+                        <div class="col-3">
+                          <i class="material-icons" style="color: #007bff;">
+                            sync
+                          </i>
+                        </div>
+                        <div class="col-6">
+                          <a href="">
+                            Rotate
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="row mt-20">
+                    <div class="col-3">
+                      <mat-label>H-Box:</mat-label>
+                      <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3">
+                      <mat-label>V-Box:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3">
+                      <mat-label>DBL:</mat-label>
+                      <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3">
+                      <mat-label>Wrap:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row mt-20">
+                    <div class="col-3">
+                      <mat-label>Circ:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3">
+                      <mat-label>Base Curve:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3">
+                      <mat-label>panto:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3">
+                      <mat-label>Vertex:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row mt-20 mb">
+                    <div class="col-3">
+                      <mat-label>Fitting Vertex:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3" style="padding: 0px;">
+                      <mat-label>Retroactive Vert:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-3">
+                      <mat-label>Panto Tilt:</mat-label>
+                      <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" />
+                    </div>
+                    </div>
+
+                    <div class="" id="frame-3"></div>
+                    <div class="col-3">
+                      <mat-label>Warp Angle:</mat-label>
+                      <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="number" class="form-control searchBar" placeholder="Warp Angle" />
+                    </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+      <!-- FRAME AND SHAPE card end -->
+      <!-- RX INFO STATED -->
+
+        <mat-card>
+          <form action="">
+            <div class="row">
+              <div class="col-sm" style="padding: 0px;">
+                <mat-card-title> <span style="margin-right: 5px;">3. </span> <span>RX INFO</span> </mat-card-title>
+              </div>
+              <div class="col-sm">
+                <i class="material-icons errorIconn">error_outline</i>
+              </div>
+            </div>
+            <div class="line"></div>
+            <mat-card-content>
+              <div class="row mt-20">
+                <div class="row" style="margin-top:10px;">
+                  <div class="col" style="margin-top: 5px; margin-bottom: 5px;">
+                    <mat-label>Focul Type</mat-label>
+                  </div>
+                </div>
+                <div class="col" style="margin-top:10px;">
+                  <button mat-button class="orderTypeWhichEye">Single Vision</button>
+                </div>
+                <div class="col" style="margin-top:10px;">
+                  <button mat-button class="orderTypeWhichEye">Progressive</button>
+                </div>
+                <div class="col" style="margin-top:10px;">
+                  <button mat-button class="orderTypeWhichEye">Bi-Focal</button>
+                </div>
+                <div class="col" style="margin-top:10px;">
+                  <button mat-button class="orderTypeWhichEye">Tri-Focal</button>
+                </div>
+                <div class="col" style="margin-top:10px;">
+                  <button mat-button class="orderTypeWhichEye">Round Seg</button>
+                </div>
+                <div class="row mt-30" style="margin-top: 10px;">
+                  <div class="col-sm-5">
+                    <mat-label>Distance RX:</mat-label>
+                    <div class="row mt-10">
+                      <div class="col" style=" padding: 0px;margin-top: 26px; margin-right: 10px;">
+                        <div class="rightCircle">
+                          <div class="right">
+                            <p style="text-align: center; ">R</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <mat-label class="lable">SPHERE:</mat-label>
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                      <div class="col-4">
+                        <mat-label class="lable">CYL:</mat-label>
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                      <div class="col-4">
+                        <mat-label class="lable">AXIS:</mat-label>
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                    </div>
+                    <div class="row mt-20">
+                      <div class="col" style=" padding: 0px;margin-top: 6px;margin-right: 10px;">
+                        <div class="leftCircle">
+                          <div class="right">
+                            <p style="text-align: center; ">L</p>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <mat-label>Near RX:</mat-label>
+                    <div class="row  mt-10">
+                      <div class="col-2" style=" padding: 0px;margin-top: 26px;">
+                        <div class="rightCircle">
+                          <div class="right">
+                            <p style="text-align: center;">R</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-9">
+                        <mat-label class="lable">ADD:</mat-label>
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                    </div>
+                    <div class="row mt-20">
+                      <div class="col-2" style=" padding: 0px;margin-top: 30px;">
+                        <div class="leftCircle" style=" margin-top: -28px;">
+                          <div class="right">
+                            <p style="text-align: center; ">L</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-9">
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <mat-label>Fitting Measurements:</mat-label>
+                    <div class="row">
+                      <div class="col-1" style=" padding: 0px;margin-top: 26px;margin-right: 15px;">
+                        <div class="rightCircle">
+                          <div class="right">
+                            <p style="text-align: center;">R</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-5">
+                        <mat-label class="lable">M. PD:</mat-label>
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                      <div class="col-5">
+                        <mat-label class="lable">FIT/OC HEIGHT:</mat-label>
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                    </div>
+                    <div class="row mt-20">
+                      <div class="col-1" style=" padding: 0px;margin-top: 33px;margin-right: 15px;">
+                        <div class="leftCircle" style="margin-top: -28px;">
+                          <div class="right">
+                            <p style="text-align: center; ">L</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-5">
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                      <div class="col-5">
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-30 mb" style="margin-top: 20px;">
+                <div class="col">
+                  <mat-checkbox>Apply Prism</mat-checkbox>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div class="col-1" style=" padding: 0px;margin-top: 33px;">
+                      <div class="rightCircle">
+                        <div class="right">
+                          <p style="text-align: center;">R</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <mat-label class="lable">M. PD:</mat-label>
+                      <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-2" style="padding: 0px;margin-top: 25px;">
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">In</mat-radio-button>
+                        <mat-radio-button value="2">Out</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                    <div class="col-4">
+                      <mat-label class="lable">FIT/OC HEIGHT:</mat-label>
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-1" style="padding: 0px;margin-top: 25px;">
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">Up</mat-radio-button>
+                        <mat-radio-button value="2">Down</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-1" style=" padding: 0px;margin-top: 10px;">
+                      <div class="leftCircle">
+                        <div class="right">
+                          <p style="text-align: center;">L</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" class="form-control searchBar" />
+                    </div>
+                    </div>
+                    <div class="col-2" style="padding: 0px;margin-top: 3px;">
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">In</mat-radio-button>
+                        <mat-radio-button value="2">Out</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                    <div class="" id="rx-4"></div>
+                    <div class="col-4">
+                      <div class="inner-addon left-addon">
+
+                        <i class="glyphicon glyphicon-user"></i>
+                        <input type="text" class="form-control searchBar" />
+                    </div>
+                    </div>
+
+
+                    <div class="col-1" style="padding: 0px;margin-top: 3px;">
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">Up</mat-radio-button>
+                        <mat-radio-button value="2">Down</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </form>
+        </mat-card>
+
+      <!-- RX INFO STATED end-->
+
+      <!-- EDGER SETTING started -->
+      <div #Rx>
+        <mat-card>
+          <form action="">
+            <div class="row">
+              <div class="col-sm" style="padding: 0px;">
+                <mat-card-title> <span style="margin-right: 5px;">4. </span> <span>EDGER SETTINGS</span>
+                </mat-card-title>
+              </div>
+              <div class="col-sm">
+                <i class="material-icons errorIconn">error_outline</i>
+              </div>
+            </div>
+            <div class="line"></div>
+            <mat-card-content>
+              <div class="row">
+                <div class="col-md-5 paddingDiv">
+                  <div class="" style="margin-top: 25px;">
+                    <div class="row" style="margin-bottom: 25px;">
+                      <div class="col-6">
+                        <h5>Vertical Bevel</h5>
+                      </div>
+                      <div class="col-6" style="text-align: right;">
+                        <mat-slide-toggle class="example-margin">
+                        </mat-slide-toggle>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="row" style="margin-bottom: 10px;">
+                          <mat-label>Bevel Position:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <!-- <p> {{followFront}} </p> -->
+                              <p style="margin-top: 7px;">{{followFront}}</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <p style="margin-top: 13px;">%</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <!-- <p> {{pssition}} </p> -->
+                              <p style="margin-top: 16px;">{{pssition}}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="row" style="margin-bottom: 10px;">
+                          <mat-label>Size:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 20px;">
+                      <div class="col-8">
+                        <div class="row" style="margin-bottom: 10px;">
+                          <mat-label>Bevel Curve:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <!-- <p> {{followFront}} </p> -->
+                              <p style="margin-top: 7px;">Frame Base</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <p style="margin-top: 13px;">Auto</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <p style="margin-top: 16px;">Smart</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="row" style="margin-bottom: 10px;">
+                          <mat-label>Size:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" style="padding-top: 15px;padding-bottom: 15px;">
+                      <div class="col">
+                        <mat-checkbox>Incline Bevel</mat-checkbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="row" style="margin-top:45px">
+                    <div class="col">
+                      <img src="../../../assets/holeImage.png" alt="" style="width: 100%;">
+                    </div>
+                  </div>
+                  <div class="row" style="margin-top:30px">
+                    <div class="col" style="text-align: center;">
+                      <button type="button" class="btn btn-outline-primary">Add Holes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 paddingDiv">
+                  <div class="" style="margin-top: 25px;">
+                    <div class="row">
+                      <div class="col-6" style="margin-bottom:15px">
+                        <h5>Groove</h5>
+                      </div>
+                      <div class="col-6" style="text-align: right;">
+                        <mat-slide-toggle class="example-margin">
+                        </mat-slide-toggle>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="row mb">
+                          <mat-label>Groove Position:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <!-- <p> {{followFront}} </p> -->
+                              <p style="margin-top: 7px;">{{followFront}}</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <p style="margin-top: 13px;">%</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <!-- <p> {{pssition}} </p> -->
+                              <p style="margin-top: 16px;">{{pssition}}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="row mb">
+                          <mat-label>Size:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                      </div>
+                      <div class="col-6" style="text-align: right;">
+                      </div>
+                    </div>
+                    <div class="row mt">
+                      <div class="col-8">
+                        <div class="row mb">
+                          <mat-label>Groove Curve:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <p style="margin-top: 7px;">Frame Base</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <p style="margin-top: 13px;">Auto</p>
+                            </div>
+                          </div>
+                          <div class="col-4" style="padding: 0px;">
+                            <div class="followFront">
+                              <p style="margin-top: 16px;">Smart</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="row mb">
+                          <mat-label>Size:</mat-label>
+                        </div>
+                        <div class="row">
+                          <div class="inner-addon left-addon">
+
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt">
+                      <div class="col-4 mb">
+                        <mat-label>Groove Depth:</mat-label>
+                        <div class="inner-addon left-addon">
+
+                          <i class="glyphicon glyphicon-user"></i>
+                          <input type="text" class="form-control searchBar" />
+                      </div>
+                      </div>
+                      <div class="col-4 mb">
+                        <mat-label>Grove Width:</mat-label>
+                        <mat-form-field appearance="outline">
+                          <input matInput type="number" placeholder="Grove Width">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-4"></div>
+                    </div>
+                    <div class="row" style="padding-top: 15px;padding-bottom: 15px;">
+                      <div class="col">
+                        <mat-checkbox>Incline Bevel</mat-checkbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="row">
+                    <div class="col">
+                      <div class="paddingDiv" style="margin-top:27px;padding-top: 30px;">
+                        <div class="row">
+                          <div class="col-6">
+                            <h5>Polish</h5>
+                          </div>
+                          <div class="col-6" style="text-align: right;margin-bottom: 25px;">
+                            <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="paddingDiv" style="margin-top:27px;padding-top: 30px;">
+                        <div class="row">
+                          <div class="col-6">
+                            <h5>Safety Bevel</h5>
+                          </div>
+                          <div class="col-6" style="text-align: right;margin-bottom: 25px;">
+                            <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                          <div class="col">
+                            <mat-label>Density:</mat-label>
+                          </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 24px;">
+                          <div class="col">
+                            <div class="soft">
+                              <p>Soft</p>
+                            </div>
+                          </div>
+                          <div class="col" style="padding: 0px;">
+                            <div class="soft">
+                              <p style="margin-left: 14px;">Medium</p>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="soft">
+                              <p>Heavy</p>
+
+                            </div>
+                          </div>
+                          <div class="col">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="paddingDiv" style="margin-top:27px;padding-top: 30px;">
+                        <div class="row">
+                          <div class="col-6">
+                            <h5>Edge Incline</h5>
+                          </div>
+                          <div class="col-6" style="text-align: right;margin-bottom: 25px;">
+                            <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                          </div>
+                        </div>
+
+                        <div class="row" id="lense-5"></div>
+                        <div class="row" style="margin-bottom: 24px;">
+                          <div class="col">
+                            <mat-label>Incline Amount:</mat-label>
+                            <div class="inner-addon left-addon">
+
+                              <i class="glyphicon glyphicon-user"></i>
+                              <input type="text" class="form-control searchBar" />
+                          </div>
+                          </div>
+
+                          <div class="col" style="padding: 0px;">
+
+                          </div>
+                          <div class="col">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+            </mat-card-content>
+          </form>
+        </mat-card>
+      </div>
+
+      <!-- EDGER SETTING end -->
+
+      <!-- LENS SELECTION started -->
+      <div #Lense id="Lense">
+        <mat-card>
+          <form action="">
+            <div class="row">
+              <div class="col-sm" style="padding: 0px;">
+                <mat-card-title> <span style="margin-right: 5px;">5. </span> <span>LENS SELECTION</span>
+                </mat-card-title>
+              </div>
+              <div class="col-sm">
+                <i class="material-icons errorIconn">error_outline</i>
+              </div>
+            </div>
+            <div class="line"></div>
+            <mat-card-content>
+              <div class="row  firstrowLensSelection">
+                <div class="col-4">
+                  <div class="row">
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="1">Stock</mat-radio-button>
+                      <mat-radio-button value="2" class="mb" style="margin-left: 55px;">Surface</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+                  <div class="row">
+                    <div class="line" style="margin-left: -36px;opacity: 0.1;"></div>
+                  </div>
+                  <div class="row ">
+                    <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button value="1">Digital</mat-radio-button>
+                      <mat-radio-button value="2" class="mt" style="margin-left: 55px;">Conventional</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row">
+                    <a href=""> AutoPick rcommended lenses</a>
+                  </div>
+                  <div class="row">
+                    <h4>Shamir 9680 Flat surface with Crizal</h4>
+                  </div>
+                </div>
+                <div class="col-2 useThis">
+                  <button type="button" class="btn btn-primary">Use This</button>
+                </div>
+              </div>
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-4">
+                  <mat-label>Lense Filter:</mat-label>
+                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                  <mat-label>Material:</mat-label>
+                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                  <mat-label>Filter Color:</mat-label>
+                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="line mt" style="opacity: 0.1;"></div>
+              </div>
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-4">
+                  <mat-label>Brand:</mat-label>
+                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                  <mat-label>Corrdio Design:</mat-label>
+                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                  <mat-label>Lens Desgin:</mat-label>
+                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="line mt" style="opacity: 0.1;"></div>
+              </div>
+
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-sm-4" style="padding: 0px;">
+                  <div class="row">
+                    <div class="col-sm-10">
+                      <div class="row mb mt">
+                        <div class="row toggle mb">
+                          <mat-slide-toggle class="example-margin">
+                          </mat-slide-toggle>
+                          <h5 style="margin-left:30px; margin-top: -6px;">AR Coating</h5>
+                        </div>
+                      </div>
+                      <div class="row mt">
+                        <mat-label>Coating Brand:</mat-label>
+                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        </select>
+                      </div>
+                      <div class="row mt mb">
+                        <mat-label>Coating Type:</mat-label>
+                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        </select>
+                      </div>
+                      <div class="row">
+                        <mat-label>Color:</mat-label>
+                        <mat-form-field appearance="outline">
+                          <mat-select [(ngModel)]="selectedBrand" name="frame">
+                            <mat-option *ngFor="let frame of brand" [value]="frame.frameName">
+                              {{frame.frameName}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field><select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-1" style="padding: 0px;">
+                      <div class="horzontal" style="margin-left: 29px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-5" style="padding: 0px;">
+                  <div class="row">
+                    <div class="col-sm-10">
+                      <div class="row mb mt">
+                        <div class="row toggle mb">
+                          <mat-slide-toggle class="example-margin">
+                          </mat-slide-toggle>
+                          <h5 style="margin-left:30px; margin-top: -6px;">Tint</h5>
+                        </div>
+                      </div>
+                      <div class="row mt">
+                        <mat-label>Coating Brand:</mat-label>
+                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        </select>
+                      </div>
+                      <div class="row mt">
+                        <mat-label>Coating Brand:</mat-label>
+                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        </select>
+                      </div>
+                      <div class="row">
+                        <mat-label>%:</mat-label>
+                      </div>
+                      <div class="row" style="width: 100%;">
+                          <div class="inner-addon left-addon" style="width: 100%;">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control searchBar" />
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-sm-1">
+                      <div class="horzontal"></div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-sm-3" style="padding: 0px;">
+                  <div class="row mb mt">
+                    <div class="row toggle mb">
+                      <mat-slide-toggle class="example-margin">
+                      </mat-slide-toggle>
+                      <h5 style="margin-left:30px; margin-top: -6px;">Hard Coat</h5>
+                    </div>
+                    <div class="row mb mt">
+                      <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button value="1">Digital</mat-radio-button>
+                        <mat-radio-button value="2" class="mt" style="margin-left: 55px;">Conventional
+                        </mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                    <div class="row mb">
+                      <div class="line" style="margin-top: 40px; opacity: 0.2;"></div>
+                    </div>
+                    <div class="row toggle mb" style="margin-top: 30px;">
+                      <mat-slide-toggle class="example-margin">
+                      </mat-slide-toggle>
+                      <h5 style="margin-left:30px; margin-top: -6px;">Hard Coat</h5>
+                    </div>
+                    <div class="row mb  mt">
+                      <mat-label>Colors:</mat-label>
+                      Colors:
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </form>
+        </mat-card>
+      </div>
+      <!-- LENS SELECTION end -->
+
+      <div class="row">
+        <div class="col" style="text-align: right;">
+          <button type="button" class="btn btn-light printSaveButton" style="margin-right: 10px;">
+            <div style="position: absolute; margin-left: -10px;">
+              <i class="material-icons">close</i>
+            </div>
+            Save and Close
+          </button>
+          <button type="button" class="btn btn-light printSaveButton">
+            <div style="position: absolute; margin-left: -5px;"><i class="material-icons">print</i></div>
+            Print Draft
+          </button>
+          <button class="btn btn-primary orderReview" type="button"(click)="review()">Review Order</button>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 40px; margin-bottom: 40px;"></div>
+    </div>
+
+  </div>
+
+  <!-- <selector> -->
+
+
+</div>
+
+<app-review *ngIf='showRevieewComponent' [inputData]='colorType'></app-review>
