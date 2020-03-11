@@ -38,8 +38,7 @@ export class LoginComponent implements OnInit {
     }
     else if (formValue.username == "santosh" && formValue.password == "123456") {
       this.router.navigate(['home/pipe']);
-      alert('SUCCESS!! :-)');
-
+      // alert('SUCCESS!! :-)');
     }
 
   }

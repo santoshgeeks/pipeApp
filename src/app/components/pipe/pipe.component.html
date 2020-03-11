@@ -114,10 +114,12 @@
         <mat-card class="example-card"  id="general">
           <div class="row">
             <div class="col-sm" style="padding: 0px;">
-              <mat-card-title> <span style="margin-right: 5px;"> 1. </span> <span>GENERAL!</span> </mat-card-title>
+              <mat-card-title> <span style="margin-right: 5px;"> 1. </span> <span>GENERAL</span> </mat-card-title>
             </div>
             <div class="col-sm">
-              <i class="material-icons errorIconn">error_outline</i>
+              <div class="icons">
+              <i class="fa fa-exclamation-triangle errorIconn" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
           <div class="line"></div>
@@ -162,7 +164,7 @@
             <!-- General Form -->
             <div class="row">
               <div class="col-sm">
-                <form action="">
+                <form [formGroup]="generalFormGroup">
                   <div class="row mt-30">
                     <div class="col-sm-5">
                      <h6></h6> <span class="label">Lab:</span>
@@ -170,7 +172,7 @@
                       <div class="inner-addon left-addon">
                         <i  class="material-icons glyphicon">search</i>
                         <i class="glyphicon glyphicon-user"></i>
-                        <input  style="padding-left: 40px;" placeholder="Color" type="text" class="form-control searchBar" />
+                        <input formControlName="lab"  style="padding-left: 40px;" placeholder="Lab" type="text" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-sm-1 margin">
@@ -179,7 +181,7 @@
 
                     <div class="col-sm-5">
                       <mat-label>Store Location</mat-label>
-                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedValue">
+                      <select formControlName="storeLocation"  placeholder="Store Location"  class="selectpicker show-menu-arrow" [(ngModel)]="selectedValue">
                         <option *ngFor="let food of Animal" [value]="food.name">{{food.name}}</option>
 
                       </select>
@@ -192,7 +194,7 @@
                       <div class="inner-addon left-addon">
                        <i  class="material-icons glyphicon">search</i>
                         <i class="glyphicon glyphicon-user"></i>
-                        <input  style="padding-left: 40px;" type="text" class="form-control searchBar" />
+                        <input formControlName="patient" placeholder="Patient" style="padding-left: 40px;" type="text" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-sm-1 margin">
@@ -204,9 +206,8 @@
                         <div class="col-sm-6" style="padding: 0px;">
                           <mat-label>Bill to Account#:</mat-label>
                           <div class="inner-addon left-addon">
-
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="billtoAccount" placeholder="Bill to Account" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                         <div class="col-sm-6">
@@ -214,7 +215,7 @@
                           <div class="inner-addon left-addon">
 
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="shipToAccount"  placeholder="Ship to Account" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                       </div>
@@ -229,7 +230,7 @@
                           <div class="inner-addon left-addon">
 
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="PO" placeholder="PO" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                         <div class="col-sm-6">
@@ -237,7 +238,7 @@
                           <div class="inner-addon left-addon">
 
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="tray" placeholder="Tray"  type="text" class="form-control searchBar" />
                         </div>
                         </div>
                       </div>
@@ -251,12 +252,12 @@
                           <div class="inner-addon left-addon">
 
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input  formControlName="packegeID" placeholder="Packege ID" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="checkbox" style="margin-top: 23px;">
-                            <mat-checkbox class="example-margin">Rush</mat-checkbox>
+                            <mat-checkbox formControlName="rush"   class="example-margin">Rush</mat-checkbox>
                           </div>
                         </div>
                       </div>
@@ -280,27 +281,29 @@
               </mat-card-title>
             </div>
             <div class="col-sm">
-              <i class="material-icons errorIconn">error_outline</i>
+              <div class="icons">
+                <i class="fa fa-exclamation-triangle errorIconn" aria-hidden="true"></i>
+                </div>
             </div>
           </div>
           <div class="line"></div>
           <mat-card-content>
-            <form action="">
+            <form action="" [formGroup]="frameAndShapeFormGroup">
               <div class="row">
                 <div class="col mt-10">
                   <div class="row mt-30">
                     <div class="col-sm-8">
-                      <mat-radio-group aria-label="Select an option">
-                        <mat-radio-button value="1" style="margin-right: 5px;">Frame To Come</mat-radio-button>
-                        <mat-radio-button value="2" style="margin-left: 34px;">Lab Suplied Frame</mat-radio-button>
+                      <mat-radio-group aria-label="Select an option" formControlName="FramComeAndSuply">
+                        <mat-radio-button value="Frame To Come" style="margin-right: 5px;">Frame To Come</mat-radio-button>
+                        <mat-radio-button value="Lab Suplied Frame" style="margin-left: 34px;">Lab Suplied Frame</mat-radio-button>
                       </mat-radio-group>
                     </div>
                     <div class="col-sm-4"></div>
                   </div>
                   <div class="row mt-30">
                     <div class="col">
-                      <mat-radio-group aria-label="Select an option">
-                        <mat-radio-button value="1" style="margin-right: 5px;">Supply Edged Lenses Only
+                      <mat-radio-group aria-label="Select an option" formControlName="SupplyEdgedLensesOnly">
+                        <mat-radio-button value="Supply Edged Lenses Only" style="margin-right: 5px;">Supply Edged Lenses Only
                         </mat-radio-button>
                       </mat-radio-group>
                     </div>
@@ -310,18 +313,16 @@
                   <div class="row mt-30">
                     <div class="col">
                       <mat-label>Frame Type:</mat-label>
-                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedValue">
-                        <option *ngFor="let frame of frameType" [value]="frame.frameName">{{frame.frameName}}</option>
-
+                      <select class="selectpicker show-menu-arrow"  formControlName="framType">
+                        <option *ngFor="let frame of frameType" >{{frame.frameName}}</option>
                       </select>
-
                     </div>
                   </div>
                   <div class="row mt-30">
                     <div class="col">
                       <mat-label>Edge Type:</mat-label>
-                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrand">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      <select class="selectpicker show-menu-arrow"  formControlName="edgeType">
+                        <option *ngFor="let edge of edgeType" [value]="edge.edge">{{edge.edge}}</option>
                       </select>
 
                     </div>
@@ -329,16 +330,16 @@
                   <div class="row mt-30">
                     <div class="col">
                       <mat-label>Frame Brand:</mat-label>
-                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      <select class="selectpicker show-menu-arrow"  formControlName="frameBrand">
+                        <option *ngFor="let brand of frameBrand" [value]="brand.fBrand">{{brand.fBrand}}</option>
                       </select>
                     </div>
                   </div>
                   <div class="row mt-30">
                     <div class="col">
                       <mat-label>Model:</mat-label>
-                      <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                      <select class="selectpicker show-menu-arrow" formControlName="model">
+                        <option *ngFor="let model of model" [value]="model.modelName">{{model.modelName}}</option>
                       </select>
                     </div>
                   </div>
@@ -346,9 +347,8 @@
                     <div class="col">
                       <mat-label>Color:</mat-label>
                       <div class="inner-addon left-addon">
-
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="text" class="form-control searchBar" />
+                        <input formControlName="color" type="text" class="form-control searchBar" />
                     </div>
                     </div>
                   </div>
@@ -425,7 +425,7 @@
                       <mat-label>H-Box:</mat-label>
                       <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input  formControlName="HBox" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3">
@@ -433,14 +433,14 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="VBox" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3">
                       <mat-label>DBL:</mat-label>
                       <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="DBL" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3">
@@ -448,7 +448,7 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="wrap" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                   </div>
@@ -458,7 +458,7 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="circ" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3">
@@ -466,7 +466,7 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="baseCurve" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3">
@@ -474,7 +474,7 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="panto" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3">
@@ -482,7 +482,7 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="vertex" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                   </div>
@@ -492,7 +492,7 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="fittingVertex" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3" style="padding: 0px;">
@@ -500,14 +500,14 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="retroactiveVert" type="number" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-3">
                       <mat-label>Panto Tilt:</mat-label>
                       <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" />
+                        <input formControlName="pantoTilt" type="number" class="form-control searchBar" />
                     </div>
                     </div>
 
@@ -516,7 +516,7 @@
                       <mat-label>Warp Angle:</mat-label>
                       <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="number" class="form-control searchBar" placeholder="Warp Angle" />
+                        <input formControlName="warpAngle" type="number" class="form-control searchBar" placeholder="Warp Angle" />
                     </div>
                     </div>
 
@@ -534,13 +534,15 @@
       <!-- RX INFO STATED -->
 
         <mat-card>
-          <form action="">
+          <form [formGroup]="RXInfoFormGroup">
             <div class="row">
               <div class="col-sm" style="padding: 0px;">
                 <mat-card-title> <span style="margin-right: 5px;">3. </span> <span>RX INFO</span> </mat-card-title>
               </div>
               <div class="col-sm">
-                <i class="material-icons errorIconn">error_outline</i>
+                <div class="icons">
+                  <i class="fa fa-exclamation-triangle errorIconn" aria-hidden="true"></i>
+                  </div>
               </div>
             </div>
             <div class="line"></div>
@@ -582,7 +584,7 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="SPHERERight" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                       <div class="col-4">
@@ -590,7 +592,7 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="CYLRight" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                       <div class="col-4">
@@ -598,7 +600,7 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="AXISRight" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                     </div>
@@ -613,23 +615,21 @@
                       </div>
                       <div class="col-3">
                         <div class="inner-addon left-addon">
-
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="SPHERELeft" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                       <div class="col-4">
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="CYLLeft" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                       <div class="col-4">
                         <div class="inner-addon left-addon">
-
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="AXISLeft" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                     </div>
@@ -649,7 +649,7 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="ADDRight" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                     </div>
@@ -665,7 +665,7 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="ADDLeft" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                     </div>
@@ -673,7 +673,7 @@
                   <div class="col-sm-4">
                     <mat-label>Fitting Measurements:</mat-label>
                     <div class="row">
-                      <div class="col-1" style=" padding: 0px;margin-top: 26px;margin-right: 15px;">
+                      <div class="col-1" style=" padding: 0px;margin-top: 26px; margin-right: 15px;">
                         <div class="rightCircle">
                           <div class="right">
                             <p style="text-align: center;">R</p>
@@ -685,7 +685,7 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="MPDRight" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                       <div class="col-5">
@@ -693,7 +693,7 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="FITOCHEIGHTRight" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                     </div>
@@ -709,14 +709,14 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="MPDLeft" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                       <div class="col-5">
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="FITOCHEIGHTLeft" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                     </div>
@@ -725,7 +725,7 @@
               </div>
               <div class="row mt-30 mb" style="margin-top: 20px;">
                 <div class="col">
-                  <mat-checkbox>Apply Prism</mat-checkbox>
+                  <mat-checkbox formControlName="applyPrism">Apply Prism</mat-checkbox>
                 </div>
               </div>
               <div class="row">
@@ -739,28 +739,28 @@
                       </div>
                     </div>
                     <div class="col-4">
-                      <mat-label class="lable">M. PD:</mat-label>
+                      <mat-label class="lable">PRISM1:</mat-label>
                       <div class="inner-addon left-addon">
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="text" class="form-control searchBar" />
+                        <input formControlName="PRISM1Right" type="text" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-2" style="padding: 0px;margin-top: 25px;">
-                      <mat-radio-group aria-label="Select an option">
+                      <mat-radio-group aria-label="Select an option" formControlName="PRISM1RightInOut">
                         <mat-radio-button value="1">In</mat-radio-button>
                         <mat-radio-button value="2">Out</mat-radio-button>
                       </mat-radio-group>
                     </div>
                     <div class="col-4">
-                      <mat-label class="lable">FIT/OC HEIGHT:</mat-label>
+                      <mat-label class="lable">PRISM2:</mat-label>
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="text" class="form-control searchBar" />
+                        <input formControlName="PRISM2Right" type="text" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-1" style="padding: 0px;margin-top: 25px;">
-                      <mat-radio-group aria-label="Select an option">
+                      <mat-radio-group aria-label="Select an option" formControlName="PRISM2RightUpDown">
                         <mat-radio-button value="1">Up</mat-radio-button>
                         <mat-radio-button value="2">Down</mat-radio-button>
                       </mat-radio-group>
@@ -778,11 +778,11 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="text" class="form-control searchBar" />
+                        <input formControlName="PRISM1Left" type="text" class="form-control searchBar" />
                     </div>
                     </div>
                     <div class="col-2" style="padding: 0px;margin-top: 3px;">
-                      <mat-radio-group aria-label="Select an option">
+                      <mat-radio-group aria-label="Select an option" formControlName="PRISM1LeftInOut">
                         <mat-radio-button value="1">In</mat-radio-button>
                         <mat-radio-button value="2">Out</mat-radio-button>
                       </mat-radio-group>
@@ -792,13 +792,13 @@
                       <div class="inner-addon left-addon">
 
                         <i class="glyphicon glyphicon-user"></i>
-                        <input type="text" class="form-control searchBar" />
+                        <input formControlName="PRISM2Left" type="text" class="form-control searchBar" />
                     </div>
                     </div>
 
 
                     <div class="col-1" style="padding: 0px;margin-top: 3px;">
-                      <mat-radio-group aria-label="Select an option">
+                      <mat-radio-group aria-label="Select an option" formControlName="PRISM2LeftUpDown">
                         <mat-radio-button value="1">Up</mat-radio-button>
                         <mat-radio-button value="2">Down</mat-radio-button>
                       </mat-radio-group>
@@ -815,14 +815,16 @@
       <!-- EDGER SETTING started -->
       <div #Rx>
         <mat-card>
-          <form action="">
+          <form [formGroup]="edgerSettingFormGroup">
             <div class="row">
               <div class="col-sm" style="padding: 0px;">
                 <mat-card-title> <span style="margin-right: 5px;">4. </span> <span>EDGER SETTINGS</span>
                 </mat-card-title>
               </div>
               <div class="col-sm">
-                <i class="material-icons errorIconn">error_outline</i>
+                <div class="icons">
+                  <i class="fa fa-exclamation-triangle errorIconn" aria-hidden="true"></i>
+                  </div>
               </div>
             </div>
             <div class="line"></div>
@@ -835,7 +837,7 @@
                         <h5>Vertical Bevel</h5>
                       </div>
                       <div class="col-6" style="text-align: right;">
-                        <mat-slide-toggle class="example-margin">
+                        <mat-slide-toggle class="example-margin" formControlName="verticalBevel">
                         </mat-slide-toggle>
                       </div>
                     </div>
@@ -847,19 +849,17 @@
                         <div class="row">
                           <div class="col-4" style="padding: 0px;">
                             <div class="followFront">
-                              <!-- <p> {{followFront}} </p> -->
-                              <p style="margin-top: 7px;">{{followFront}}</p>
+                              <p style="margin-top: 7px;">Follow Front</p>
                             </div>
                           </div>
                           <div class="col-4" style="padding: 0px;">
                             <div class="followFront">
-                              <p style="margin-top: 13px;">%</p>
+                              <p style="margin-top: 13px;">% Front</p>
                             </div>
                           </div>
                           <div class="col-4" style="padding: 0px;">
                             <div class="followFront">
-                              <!-- <p> {{pssition}} </p> -->
-                              <p style="margin-top: 16px;">{{pssition}}</p>
+                              <p style="margin-top: 16px;">50-50</p>
                             </div>
                           </div>
                         </div>
@@ -870,9 +870,8 @@
                         </div>
                         <div class="row">
                           <div class="inner-addon left-addon">
-
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="bewelPositionSize" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                       </div>
@@ -910,14 +909,14 @@
                           <div class="inner-addon left-addon">
 
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="bewelCurveSize" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                       </div>
                     </div>
                     <div class="row" style="padding-top: 15px;padding-bottom: 15px;">
                       <div class="col">
-                        <mat-checkbox>Incline Bevel</mat-checkbox>
+                        <mat-checkbox formControlName="inclineBevel">Incline Bevel</mat-checkbox>
                       </div>
                     </div>
                   </div>
@@ -943,7 +942,7 @@
                         <h5>Groove</h5>
                       </div>
                       <div class="col-6" style="text-align: right;">
-                        <mat-slide-toggle class="example-margin">
+                        <mat-slide-toggle class="example-margin" formControlName="groove">
                         </mat-slide-toggle>
                       </div>
                     </div>
@@ -980,7 +979,7 @@
                           <div class="inner-addon left-addon">
 
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="groovePositionSize" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                       </div>
@@ -1022,7 +1021,7 @@
                           <div class="inner-addon left-addon">
 
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="grooveDepth" type="text" class="form-control searchBar" />
                         </div>
                         </div>
                       </div>
@@ -1033,20 +1032,20 @@
                         <div class="inner-addon left-addon">
 
                           <i class="glyphicon glyphicon-user"></i>
-                          <input type="text" class="form-control searchBar" />
+                          <input formControlName="bewelCurveSize" type="text" class="form-control searchBar" />
                       </div>
                       </div>
                       <div class="col-4 mb">
-                        <mat-label>Grove Width:</mat-label>
+                        <mat-label>Groove Width:</mat-label>
                         <mat-form-field appearance="outline">
-                          <input matInput type="number" placeholder="Grove Width">
+                          <input formControlName="grooveWidth" matInput type="number" placeholder="Grove Width">
                         </mat-form-field>
                       </div>
                       <div class="col-4"></div>
                     </div>
                     <div class="row" style="padding-top: 15px;padding-bottom: 15px;">
                       <div class="col">
-                        <mat-checkbox>Incline Bevel</mat-checkbox>
+                        <mat-checkbox formControlName="inclineGroove">Incline Groove</mat-checkbox>
                       </div>
                     </div>
                   </div>
@@ -1060,7 +1059,7 @@
                             <h5>Polish</h5>
                           </div>
                           <div class="col-6" style="text-align: right;margin-bottom: 25px;">
-                            <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                            <mat-slide-toggle formControlName="polish" class="example-margin"></mat-slide-toggle>
                           </div>
                         </div>
                       </div>
@@ -1074,7 +1073,7 @@
                             <h5>Safety Bevel</h5>
                           </div>
                           <div class="col-6" style="text-align: right;margin-bottom: 25px;">
-                            <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                            <mat-slide-toggle formControlName="safetyBevel" class="example-margin"></mat-slide-toggle>
                           </div>
                         </div>
                         <div class="row" style="margin-bottom: 10px;">
@@ -1113,7 +1112,7 @@
                             <h5>Edge Incline</h5>
                           </div>
                           <div class="col-6" style="text-align: right;margin-bottom: 25px;">
-                            <mat-slide-toggle class="example-margin"></mat-slide-toggle>
+                            <mat-slide-toggle formControlName="edgeIncline" class="example-margin"></mat-slide-toggle>
                           </div>
                         </div>
 
@@ -1124,7 +1123,7 @@
                             <div class="inner-addon left-addon">
 
                               <i class="glyphicon glyphicon-user"></i>
-                              <input type="text" class="form-control searchBar" />
+                              <input formControlName="inclineAmount" type="text" class="form-control searchBar" />
                           </div>
                           </div>
 
@@ -1150,14 +1149,16 @@
       <!-- LENS SELECTION started -->
       <div #Lense id="Lense">
         <mat-card>
-          <form action="">
+          <form [formGroup]="lenseSelectionFormGroup">
             <div class="row">
               <div class="col-sm" style="padding: 0px;">
                 <mat-card-title> <span style="margin-right: 5px;">5. </span> <span>LENS SELECTION</span>
                 </mat-card-title>
               </div>
               <div class="col-sm">
-                <i class="material-icons errorIconn">error_outline</i>
+                <div class="icons">
+                  <i class="fa fa-exclamation-triangle errorIconn" aria-hidden="true"></i>
+                  </div>
               </div>
             </div>
             <div class="line"></div>
@@ -1165,16 +1166,16 @@
               <div class="row  firstrowLensSelection">
                 <div class="col-4">
                   <div class="row">
-                    <mat-radio-group aria-label="Select an option">
-                      <mat-radio-button value="1">Stock</mat-radio-button>
-                      <mat-radio-button value="2" class="mb" style="margin-left: 55px;">Surface</mat-radio-button>
+                    <mat-radio-group aria-label="Select an option" formControlName="autoPickUp">
+                      <mat-radio-button value="stock">Stock</mat-radio-button>
+                      <mat-radio-button value="surface" class="mb" style="margin-left: 55px;">Surface</mat-radio-button>
                     </mat-radio-group>
                   </div>
                   <div class="row">
                     <div class="line" style="margin-left: -36px;opacity: 0.1;"></div>
                   </div>
                   <div class="row ">
-                    <mat-radio-group aria-label="Select an option">
+                    <mat-radio-group aria-label="Select an option" formControlName="autoPickDown">
                       <mat-radio-button value="1">Digital</mat-radio-button>
                       <mat-radio-button value="2" class="mt" style="margin-left: 55px;">Conventional</mat-radio-button>
                     </mat-radio-group>
@@ -1195,20 +1196,20 @@
               <div class="row" style="margin-top: 30px;">
                 <div class="col-4">
                   <mat-label>Lense Filter:</mat-label>
-                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                  <select class="selectpicker show-menu-arrow" formControlName="lenseFilter">
+                        <option *ngFor="let lense of lenseFilter" [value]="lense.lense">{{lense.lense}}</option>
                       </select>
                 </div>
                 <div class="col-4">
                   <mat-label>Material:</mat-label>
-                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                  <select class="selectpicker show-menu-arrow" formControlName="material">
+                        <option *ngFor="let material of material" [value]="material.materialType">{{material.materialType}}</option>
                       </select>
                 </div>
                 <div class="col-4">
                   <mat-label>Filter Color:</mat-label>
-                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                  <select class="selectpicker show-menu-arrow" formControlName="filterColor">
+                        <option *ngFor="let color of filterColor" [value]="color.color">{{color.color}}</option>
                       </select>
                 </div>
               </div>
@@ -1218,20 +1219,20 @@
               <div class="row" style="margin-top: 30px;">
                 <div class="col-4">
                   <mat-label>Brand:</mat-label>
-                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
+                  <select class="selectpicker show-menu-arrow"  formControlName="verticalBevel">
                         <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
                       </select>
                 </div>
                 <div class="col-4">
                   <mat-label>Corrdio Design:</mat-label>
-                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                  <select class="selectpicker show-menu-arrow" formControlName="corrdioDesign">
+                        <option *ngFor="let corrdio of corrdioDesign" [value]="corrdio.cDesign">{{corrdio.cDesign}}</option>
                       </select>
                 </div>
                 <div class="col-4">
                   <mat-label>Lens Desgin:</mat-label>
-                  <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                        <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                  <select class="selectpicker show-menu-arrow"  formControlName="lensDesgin">
+                        <option *ngFor="let ldesgin of lensDesgin" [value]="ldesgin.lDesign">{{ldesgin.lDesign}}</option>
                       </select>
                 </div>
               </div>
@@ -1245,33 +1246,27 @@
                     <div class="col-sm-10">
                       <div class="row mb mt">
                         <div class="row toggle mb">
-                          <mat-slide-toggle class="example-margin">
+                          <mat-slide-toggle class="example-margin" formControlName="ARCoating">
                           </mat-slide-toggle>
                           <h5 style="margin-left:30px; margin-top: -6px;">AR Coating</h5>
                         </div>
                       </div>
                       <div class="row mt">
                         <mat-label>Coating Brand:</mat-label>
-                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        <select class="selectpicker show-menu-arrow" formControlName="coatingBrand">
+                          <option *ngFor="let cBrand of coatingBrand" [value]="cBrand.cBrand">{{cBrand.cBrand}}</option>
                         </select>
                       </div>
                       <div class="row mt mb">
                         <mat-label>Coating Type:</mat-label>
-                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        <select class="selectpicker show-menu-arrow"  formControlName="coatingType">
+                          <option *ngFor="let CotType of coatingType" [value]="CotType.cotType">{{CotType.cotType}}</option>
                         </select>
                       </div>
                       <div class="row">
                         <mat-label>Color:</mat-label>
-                        <mat-form-field appearance="outline">
-                          <mat-select [(ngModel)]="selectedBrand" name="frame">
-                            <mat-option *ngFor="let frame of brand" [value]="frame.frameName">
-                              {{frame.frameName}}
-                            </mat-option>
-                          </mat-select>
-                        </mat-form-field><select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        <select class="selectpicker show-menu-arrow"  formControlName="ARcolor">
+                          <option *ngFor="let color of color" [value]="color.color">{{color.color}}</option>
                         </select>
                       </div>
                     </div>
@@ -1285,21 +1280,21 @@
                     <div class="col-sm-10">
                       <div class="row mb mt">
                         <div class="row toggle mb">
-                          <mat-slide-toggle class="example-margin">
+                          <mat-slide-toggle class="example-margin" formControlName="tint">
                           </mat-slide-toggle>
                           <h5 style="margin-left:30px; margin-top: -6px;">Tint</h5>
                         </div>
                       </div>
                       <div class="row mt">
-                        <mat-label>Coating Brand:</mat-label>
-                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        <mat-label>Type:</mat-label>
+                        <select class="selectpicker show-menu-arrow"  formControlName="tintType">
+                          <option *ngFor="let tintT of tintType" [value]="tintT.tintT">{{tintT.tintT}}</option>
                         </select>
                       </div>
                       <div class="row mt">
-                        <mat-label>Coating Brand:</mat-label>
-                        <select class="selectpicker show-menu-arrow"  name="food" [(ngModel)]="selectedBrandType">
-                          <option *ngFor="let brand of brandType" [value]="brand.brandName">{{brand.brandName}}</option>
+                        <mat-label>Color:</mat-label>
+                        <select class="selectpicker show-menu-arrow"  formControlName="tintcolor">
+                          <option *ngFor="let tColor of tintColor" [value]="tColor.tColor">{{tColor.tColor}}</option>
                         </select>
                       </div>
                       <div class="row">
@@ -1308,7 +1303,7 @@
                       <div class="row" style="width: 100%;">
                           <div class="inner-addon left-addon" style="width: 100%;">
                             <i class="glyphicon glyphicon-user"></i>
-                            <input type="text" class="form-control searchBar" />
+                            <input formControlName="percent" type="text" class="form-control searchBar" />
                         </div>
 
                       </div>
@@ -1322,12 +1317,12 @@
                 <div class="col-sm-3" style="padding: 0px;">
                   <div class="row mb mt">
                     <div class="row toggle mb">
-                      <mat-slide-toggle class="example-margin">
+                      <mat-slide-toggle class="example-margin" formControlName="hardCoat">
                       </mat-slide-toggle>
                       <h5 style="margin-left:30px; margin-top: -6px;">Hard Coat</h5>
                     </div>
                     <div class="row mb mt">
-                      <mat-radio-group aria-label="Select an option">
+                      <mat-radio-group aria-label="Select an option" formControlName="hardCoatDisAndConv">
                         <mat-radio-button value="1">Digital</mat-radio-button>
                         <mat-radio-button value="2" class="mt" style="margin-left: 55px;">Conventional
                         </mat-radio-button>
@@ -1337,13 +1332,15 @@
                       <div class="line" style="margin-top: 40px; opacity: 0.2;"></div>
                     </div>
                     <div class="row toggle mb" style="margin-top: 30px;">
-                      <mat-slide-toggle class="example-margin">
+                      <mat-slide-toggle class="example-margin" formControlName="mirrorCoating">
                       </mat-slide-toggle>
-                      <h5 style="margin-left:30px; margin-top: -6px;">Hard Coat</h5>
+                      <h5 style="margin-left:30px; margin-top: -6px;">Mirror Coating</h5>
                     </div>
                     <div class="row mb  mt">
                       <mat-label>Colors:</mat-label>
-                      Colors:
+                      <select class="selectpicker show-menu-arrow" formControlName="hardCoatColor">
+                        <option *ngFor="let hColor of hardCoatColor" [value]="hColor.hColor">{{hColor.hColor}}</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -1357,7 +1354,7 @@
       <div class="row">
         <div class="col" style="text-align: right;">
           <button type="button" class="btn btn-light printSaveButton" style="margin-right: 10px;">
-            <div style="position: absolute; margin-left: -10px;">
+            <div style="position: absolute; margin-left: -15px;">
               <i class="material-icons">close</i>
             </div>
             Save and Close
@@ -1366,7 +1363,7 @@
             <div style="position: absolute; margin-left: -5px;"><i class="material-icons">print</i></div>
             Print Draft
           </button>
-          <button class="btn btn-primary orderReview" type="button"(click)="review()">Review Order</button>
+          <button class="btn btn-primary orderReview" type="button"(click)="review(generalFormGroup.value,frameAndShapeFormGroup.value,RXInfoFormGroup.value, edgerSettingFormGroup.value,lenseSelectionFormGroup.value)">Review Order</button>
         </div>
       </div>
 
@@ -1380,4 +1377,4 @@
 
 </div>
 
-<app-review *ngIf='showRevieewComponent' [inputData]='colorType'></app-review>
+<app-review *ngIf='showRevieewComponent' [inputData]='generalFormGroup.value'></app-review>
